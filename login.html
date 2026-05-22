@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Admin BEM</title>
+</head>
+<body>
+
+<div class="login-box">
+
+    <h2>Login Admin BEM</h2>
+
+    <div class="input-group">
+        <label>Username</label>
+        <input type="text" id="username">
+    </div>
+
+    <div class="input-group">
+        <label>Password</label>
+        <input type="password" id="password">
+    </div>
+
+    <button onclick="login()">Masuk</button>
+
+    <p id="pesan"></p>
+<p style="text-align:center; margin-top:15px;">
+    <a href="#" onclick="buatAkun()">Buat Akun</a> |
+    <a href="#" onclick="lupaPassword()">Lupa Password?</a>
+</p>
+</div>
+
+
+<script>
+function login(){
+
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+    let pesan = document.getElementById("pesan");
+
+    let user = localStorage.getItem("username");
+    let pass = localStorage.getItem("password");
+
+    if(username === user && password === pass){
+
+        pesan.style.color = "green";
+        pesan.innerHTML = "Login berhasil!";
+
+        setTimeout(() => {
+            window.location.href = "index.html";
+        },1500);
+
+    }else{
+
+        pesan.style.color = "red";
+        pesan.innerHTML = "Username atau Password salah!";
+
+    }
+}
+
+function buatAkun(){
+
+    let username = prompt("Masukkan Username Baru");
+    let password = prompt("Masukkan Password Baru");
+
+    if(username && password){
+
+        localStorage.setItem("username", username);
+        localStorage.setItem("password", password);
+
+        alert("Akun berhasil dibuat!");
+    }
+}
+
+function lupaPassword(){
+
+    let username = prompt("Masukkan Username");
+
+    let user = localStorage.getItem("username");
+    let pass = localStorage.getItem("password");
+
+    if(username === user){
+
+        alert("Password Anda: " + pass);
+
+    }else{
+
+        alert("Username tidak ditemukan!");
+
+    }
+}
+</script>
+
+</body>
+</html>
