@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BEM STMIK Kota Tidore Kepulauan</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header>
+    <div logo>
+     <img src="bem.png" style="width: 60px;" alt="Logo BEM">
+     <h3>BEM STMIK Kota Tidore Kepulauan</h3>
+   
+</div>
+    <nav>
+        <ul>
+            <li><a href="#">Beranda</a></li>
+            <a href="profil.html">Profil</a>
+            <li><a href="proker.html">Program Kerja</a></li>
+            <li><a href="berita.html">Berita</a></li>
+            <li><a href="struktur.html">pengurus</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+            <li><a href="login.html" onclick="login()">Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Selamat Datang di Website BEM</h2>
+    <p>
+        Media informasi resmi BEM untuk menyampaikan kegiatan,
+        program kerja, berita kampus, dan informasi mahasiswa.
+    </p>
+
+    <button class="btn" onclick="lihatKegiatan()">
+        Lihat Kegiatan
+    </button>
+</section>
+
+<div class="container">
+    <div class="cards">
+
+        <div class="card">
+            <h3>Program Kerja</h3>
+            <p>Menampilkan seluruh program kerja BEM selama satu periode kepengurusan.</p>
+        </div>
+
+        <div class="card">
+            <h3>Berita Kampus</h3>
+            <p>Berita terbaru seputar kegiatan mahasiswa dan kampus.</p>
+        </div>
+
+        <div class="card">
+            <h3>Galeri Kegiatan</h3>
+            <p>Dokumentasi foto kegiatan organisasi dan kemahasiswaan.</p>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 BEM STMIK Kota Tidore Kepulauan</p>
+</footer>
+
+<script>
+function lihatKegiatan(){
+    alert("Fitur kegiatan akan ditampilkan di halaman berikutnya.");
+}
+
+function login(){
+
+    let username = prompt("Masukkan Username");
+    let password = prompt("Masukkan Password");
+
+    if(username === "admin" && password === "12345"){
+        alert("Login Berhasil!");
+    }else{
+        alert("Username atau Password Salah!");
+    }
+
+}
+</script>
+
+</body>
+</html>
